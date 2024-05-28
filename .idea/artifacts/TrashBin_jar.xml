@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="TrashBin:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrashBin_jar</output-path>
+    <root id="archive" name="TrashBin.jar">
+      <element id="module-output" name="TrashBin" />
+    </root>
+  </artifact>
+</component>

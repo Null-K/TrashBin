@@ -1,0 +1,16 @@
+trash-bin-title: "&c垃圾桶"
+no-permission-message: "&c你没有使用该命令的权限"
+player-not-found-message: "&c玩家不在线或不存在"
+usage-message: "&e正确指令: /trash [player|reload]"
+only-players-message: "&c该指令只能由玩家执行"
+trash-opened-message: "&a成功为玩家 %player% 打开垃圾桶界面"
+reload-message: "&a配置文件重载成功"
+
+##English
+#trash-bin-title: "&cTrash Bin"
+#no-permission-message: "&cYou do not have permission to use this command."
+#player-not-found-message: "&cPlayer not found or not online."
+#usage-message: "&eUsage: /trash [player]"
+#only-players-message: "&cOnly players can use this command without arguments."
+#trash-opened-message: "&aOpened trash bin for %player%."
+#reload-message: "&aTrashBin configuration reloaded."

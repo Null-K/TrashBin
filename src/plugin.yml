@@ -1,0 +1,15 @@
+main: com.puddingkc.TrashBin
+name: TrashBin
+version: 1.0.1
+api-version: 1.16
+author: "PuddingKC"
+commands:
+  trash:
+    description: Main Command
+permissions:
+  trashbin.use:
+    default: op
+  trashbin.use.other:
+    default: op
+  trashbin.reload:
+    default: op
