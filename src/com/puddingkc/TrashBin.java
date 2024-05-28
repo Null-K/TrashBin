@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryCloseEvent;
+import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,6 +27,7 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
     private String onlyPlayersMessage;
     private String trashOpenedMessage;
     private String reloadMessage;
+    private String trashGuiType;
 
     @Override
     public void onEnable() {
@@ -44,6 +46,7 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
         onlyPlayersMessage = getConfig().getString("only-players-message", "&c该指令只能由玩家执行").replace("&","§");
         trashOpenedMessage = getConfig().getString("trash-opened-message", "&a成功为玩家 %player% 打开垃圾桶界面").replace("&","§");
         reloadMessage = getConfig().getString("reload-message","&a配置文件重载成功").replace("&","§");
+        trashGuiType = getConfig().getString("trash-gui-type", "CHEST").toUpperCase();
     }
 
     @Override
@@ -116,7 +119,19 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
     }
 
     private void openTrashGui(Player player) {
-        Inventory trashGui = Bukkit.createInventory(null, 27, trashBinTitle);
+        Inventory trashGui;
+        switch (trashGuiType) {
+            case "HOPPER":
+                trashGui = Bukkit.createInventory(null, InventoryType.HOPPER, trashBinTitle);
+                break;
+            case "DISPENSER":
+                trashGui = Bukkit.createInventory(null, InventoryType.DISPENSER, trashBinTitle);
+                break;
+            case "CHEST":
+            default:
+                trashGui = Bukkit.createInventory(null, 27, trashBinTitle);
+                break;
+        }
         player.openInventory(trashGui);
     }
 

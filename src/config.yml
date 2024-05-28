@@ -1,3 +1,5 @@
+trash-gui-type: CHEST #CHEST, HOPPER, DISPENSER
+
 trash-bin-title: "&c垃圾桶"
 no-permission-message: "&c你没有使用该命令的权限"
 player-not-found-message: "&c玩家不在线或不存在"
