@@ -1,4 +1,5 @@
 trash-gui-type: CHEST #CHEST, HOPPER, DISPENSER
+feed-back-message: true
 
 trash-bin-title: "&c垃圾桶"
 no-permission-message: "&c你没有使用该命令的权限"

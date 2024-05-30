@@ -28,6 +28,7 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
     private String trashOpenedMessage;
     private String reloadMessage;
     private String trashGuiType;
+    private Boolean feedBackMessage;
 
     @Override
     public void onEnable() {
@@ -47,6 +48,7 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
         trashOpenedMessage = getConfig().getString("trash-opened-message", "&a成功为玩家 %player% 打开垃圾桶界面").replace("&","§");
         reloadMessage = getConfig().getString("reload-message","&a配置文件重载成功").replace("&","§");
         trashGuiType = getConfig().getString("trash-gui-type", "CHEST").toUpperCase();
+        feedBackMessage = getConfig().getBoolean("feed-back-message",true);
     }
 
     @Override
@@ -85,7 +87,9 @@ public class TrashBin extends JavaPlugin implements CommandExecutor, Listener, T
                 Player target = Bukkit.getPlayer(args[0]);
                 if (target != null && target.isOnline()) {
                     openTrashGui(target);
-                    sender.sendMessage(trashOpenedMessage.replace("%player%", target.getName()));
+                    if (feedBackMessage) {
+                        sender.sendMessage(trashOpenedMessage.replace("%player%", target.getName()));
+                    }
                     return true;
                 } else {
                     sender.sendMessage(playerNotFoundMessage);

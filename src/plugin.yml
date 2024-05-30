@@ -1,6 +1,6 @@
 main: com.puddingkc.TrashBin
 name: TrashBin
-version: 1.0.2
+version: 1.0.3
 api-version: 1.16
 author: "PuddingKC"
 commands:
